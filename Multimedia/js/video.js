@@ -19,3 +19,14 @@ function stop(){
   //video.currentTime = 0;
   video.load();
 }
+
+function volume(){
+  var volume = document.getElementById("volume").value;
+  if(volume === "100"){
+    volume = 1;
+  } else {
+    volume = parseFloat("0."+volume).toFixed(1);
+  }
+  var video = getVideo();
+  video.volume = volume;
+}
