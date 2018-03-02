@@ -30,3 +30,20 @@ function volume(){
   var video = getVideo();
   video.volume = volume;
 }
+
+function muted(){
+  var video = getVideo();
+  var mut = document.getElementById("muted");
+  if(video.muted){
+    video.muted = false;
+    mut.style.color = "black";
+  } else {
+    video.muted = true;
+    mut.style.color = "red";
+  }
+}
+
+function full(){
+  var video = getVideo();
+  video.webkitEnterFullScreen();
+}
