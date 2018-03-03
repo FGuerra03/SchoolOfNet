@@ -17,30 +17,16 @@
   </section>
   <section>
     <div class="row text-center">
-      <video id="video" width="560" height="350" poster="img/video-poster.jpg">
-      <source src="media/introcss3.mp4">
-      Your browser does not support the video tag.
-    </video>
-    </div>
-    <div class="row text-center">
-      <button onclick="play();">Play</button>
-      <button onclick="pause();">Pause</button>
-      <button onclick="stop();">Stop</button>
-      <input type="range" id="volume" min="0" max="100" value="100" onchange="volume();">
-      <button id="muted" onclick="muted();">Muted</button>
-      <button onclick="full();">Full Screen</button>
-    </div>
-
-    <div class="row">
-      <table id="tableList" class="table">
-        
-      </table>
+      <audio id="audio" width="560" height="350" controls>
+        <source src="media/introcss3.mp4">
+        Your browser does not support the video tag.
+      </audio>
     </div>
 
     <br>
   </section>
 
-  <script src="js/video.js">
+  <script src="js/audio.js">
   </script>
 
 </body>
