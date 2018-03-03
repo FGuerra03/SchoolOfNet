@@ -13,18 +13,21 @@
     <h1 class="navbar-brand">Multimedia</h1>
   </header>
   <section>
-    <h1 class="title">Multimedia</h1>
+    <h1 class="title">Youtube</h1>
   </section>
   <section>
     <div class="row text-center">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/yzBXcMUSwMM?autoplay=0&controls=1&modestbranding=1&showinfo=0">
-
-      </iframe>
+      <input onkeyup="search();" type="text" id="search" placeholder="Search">
     </div>
-
+    <br>
+    <div class="row text-center">
+      <iframe id="iframeId" width="560" height="315" style="display: none;" src="">
+        </iframe>
+    </div>
     <br>
   </section>
 
+  <script src="js/youtube.js"></script>
 </body>
 
 </html>
