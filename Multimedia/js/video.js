@@ -13,9 +13,16 @@ function pause() {
 }
 
 function stop() {
-  video = getVideo();
+  var video = getVideo();
   //video.pause();
   //video.currentTime = 0;
+
+  var objVideo = getStorage("video");
+  objVideo.desc.push("Video load aborted");
+  objVideo.time.push(video.currentTime);
+  objVideo.volume.push(video.volume);
+  setStorage("video", objVideo);
+
   video.load();
 }
 
@@ -46,6 +53,11 @@ function full() {
   var video = getVideo();
   video.webkitEnterFullScreen();
 }
+
+getVideo().oncanplay = function() {
+  var list = getStorage("listVideo");
+  setTable(list);
+};
 
 getVideo().onplay = function() {
   console.log("The video has started play");
@@ -78,18 +90,16 @@ getVideo().onabort = function() {
   console.log("Video load aborted");
 
   var objVideo = getStorage("video");
-  objVideo.desc.push("Video load aborted");
-  objVideo.time.push(getVideo().currentTime);
-  objVideo.volume.push(getVideo().volume);
-  setStorage("video", objVideo);
+  setStorage("video", {});
 
   var listVideo = getStorage("listVideo");
 
-  if (!listVideo.lenght) {
+  if (!listVideo.length) {
     listVideo = [];
-    listVideo.push(objVideo);
-    setStorage("listVideo", listVideo);
   }
+  listVideo.push(objVideo);
+  setStorage("listVideo", listVideo);
+
 };
 
 getVideo().onvolumechange = function() {
@@ -113,4 +123,44 @@ function getStorage(id) {
   } else {
     return {};
   }
+}
+
+function setTable(list) {
+  var table = '<thead><tr><td>...</td><td>Desc</td><td>Time</td><td>Volume</td></tr></thead><tbody>';
+  for (var k in list) {
+    table += '<tr><td>' + k + '</td>';
+    var desc = '';
+    var time = '';
+    var volume = '';
+    for (var j in list[k].desc) {
+      desc += '<p>' + list[k].desc[j] + '</p>';
+      time += '<p>' + formatTime(list[k].time[j]) + '</p>';
+      volume += '<p>' + list[k].volume[j] + '</p>';
+    }
+    table += '<td>' + desc + '</td>';
+    table += '<td>' + time + '</td>';
+    table += '<td>' + volume + '</td>';
+    table += '</tr></tbody>';
+  }
+
+  document.getElementById("tableList").innerHTML = table;
+}
+
+function formatTime(time) {
+  var second = parseInt(time % 60);
+  var minAux = time / 60;
+  var minute = parseInt(minAux % 60);
+  var hour = parseInt(minAux / 60);
+
+  if (second < 10) {
+    second = "0" + second;
+  }
+  if (minute < 10) {
+    minute = "0" + minute;
+  }
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
+
+  return hour + ":" + minute + ":" + second;
 }
