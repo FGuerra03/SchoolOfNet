@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Multimedia - School of Net</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Multimedia - School of Net</title>
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
-<header class="navbar-header">
+  <header class="navbar-header">
     <h1 class="navbar-brand">Multimedia</h1>
-</header>
-<section>
+  </header>
+  <section>
     <h1 class="title">Multimedia</h1>
-</section>
-<section>
-  <div class="row text-center">
-    <video id="video" width="560" height="350" poster="img/video-poster.jpg">
+  </section>
+  <section>
+    <div class="row text-center">
+      <video id="video" width="560" height="350" poster="img/video-poster.jpg">
       <source src="media/introcss3.mp4">
       Your browser does not support the video tag.
     </video>
-  </div>
-  <div class="row text-center">
-    <button onclick="play();">Play</button>
-    <button onclick="pause();">Pause</button>
-    <button onclick="stop();">Stop</button>
-    <input type="range" id="volume" min="0" max="100" value="100" onchange="volume();">
-    <button id="muted" onclick="muted();">Muted</button>
-    <button onclick="full();">Full Screen</button>
-  </div>
-  <br>
-</section>
+    </div>
+    <div class="row text-center">
+      <button onclick="play();">Play</button>
+      <button onclick="pause();">Pause</button>
+      <button onclick="stop();">Stop</button>
+      <input type="range" id="volume" min="0" max="100" value="100" onchange="volume();">
+      <button id="muted" onclick="muted();">Muted</button>
+      <button onclick="full();">Full Screen</button>
+    </div>
+    <br>
+  </section>
 
-<script src="js/video.js">
-
-</script>
+  <script src="js/video.js">
+  </script>
 
 </body>
+
 </html>
