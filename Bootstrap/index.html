@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/open-iconic.min.css">
 </head>
 
 <body>
@@ -56,65 +57,93 @@
       </div>
     </div>
   </div>
-
   <div class="container">
-    <div class="row" style="min-height: 12em; background: purple;">
-      <div class="col-6 align-self-start" style="border: 1px solid white;">Column 1</div>
-      <div class="col-6 align-self-end" style="border: 1px solid white;">Column 2</div>
+    <div class="row">
+      <!-- <div class="col-xs-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              Title header
+            </div>
+            <div class="card-body">
+              Card Body
+            </div>
+            <div class="card-footer">
+              Card Footer
+            </div>
+          </div>
+        </div> -->
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="card text-center" style="border: none;">
+          <div class="card-body">
+            <span class="oi" data-glyph="globe" style="border-radius: 50%; padding: 1.2em; color: white; background: red; font-size: 1.3em;"></span>
+            <p class="text-center" style="margin-top: 1.2em;">Text test</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="card text-center" style="border: none;">
+          <div class="card-body">
+            <span class="oi" data-glyph="infinity" style="border-radius: 50%; padding: 1.2em; color: white; background: red; font-size: 1.3em;"></span>
+            <p class="text-center" style="margin-top: 1.2em;">Text test</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="card text-center" style="border: none;">
+          <div class="card-body">
+            <span class="oi" data-glyph="info" style="border-radius: 50%; padding: 1.2em; color: white; background: red; font-size: 1.3em;">
+</span>
+            <p class="text-center" style="margin-top: 1.2em;">Text test</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
   <div class="container">
-    <div class="row justify-content-center" style="min-height: 12em; background: red;">
-      <div class="col-3 offset-md-1" style="border: 1px solid white;">Column 1</div>
-      <div class="col-3 offset-md-1" style="border: 1px solid white;">Column 2</div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <form action="">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6">
-                <div class="form-group">
-                  <label for="name">Name:</label>
-                  <input class="form-control" type="text" name="name" value="" placeholder="Enter your name:">
-                  <small class="form-text text-muted">Put your full name</small>
-                </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <form action="">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" name="name" value="" placeholder="Enter your name:">
+                <small class="form-text text-muted">Put your full name</small>
               </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input class="form-control form-control-lg" type="email" name="" value="" placeholder="Enter emal:">
-                  <small class="form-text text-muted">Put your best email here</small>
-                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control form-control-lg" type="email" name="" value="" placeholder="Enter emal:">
+                <small class="form-text text-muted">Put your best email here</small>
               </div>
-              <div class="col-xs-12 col-sm-12">
-                <div class="form-group">
-                  <label for="subject">Subject:</label>
-                  <select class="form-control form-control-sm" name="subject">
+            </div>
+            <div class="col-xs-12 col-sm-12">
+              <div class="form-group">
+                <label for="subject">Subject:</label>
+                <select class="form-control form-control-sm" name="subject">
                       <option value="" selected></option>
                       <option value="">Option 1</option>
                       <option value="">Option 2</option>
                   </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message:</label>
-                  <textarea class="form-control" name="message" rows="10" cols="30" placeholder="Enter your message"></textarea>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input">
-                  <label for="" class="form-check-label">Send reply to email?</label>
-                </div>
-                <div class="form-group">
-                  <button type="submit" name="button" class="btn btn-block btn-lg btn-outline-danger">Primary</button>
-                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" name="message" rows="10" cols="30" placeholder="Enter your message"></textarea>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input">
+                <label for="" class="form-check-label">Send reply to email?</label>
+              </div>
+              <div class="form-group">
+                <button type="submit" name="button" class="btn btn-block btn-lg btn-outline-danger">Primary</button>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
