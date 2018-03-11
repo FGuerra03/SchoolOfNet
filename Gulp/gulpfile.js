@@ -4,7 +4,9 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   imagemin = require('gulp-imagemin'),
   htmlmin = require('gulp-htmlmin'),
-  gls = require('gulp-live-server');
+  gls = require('gulp-live-server'),
+  jshint = require('gulp-jshint'),
+  stylish = require('jshint-stylish');
 
 gulp.task('default', ['sass', 'js', 'image', 'htmlmin', 'watch', 'serve']);
 
@@ -58,4 +60,10 @@ gulp.task('serve', function(){
   gulp.watch('./*.html', function(file){
     server.notify.apply(server, [file]);
   });
+});
+
+gulp.task('lint', function() {
+  return gulp.src('assets/src/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
 });
